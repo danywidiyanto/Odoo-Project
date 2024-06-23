@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hashmicrowedor_client,access.hashmicrowedor.client,model_hashmicrowedor_client,,1,1,1,1
+access_hashmicrowedor_venue,access.hashmicrowedor.venue,model_hashmicrowedor_venue,,1,1,1,1
+access_hashmicrowedor_catering,access.hashmicrowedor.catering,model_hashmicrowedor_catering,,1,1,1,1
+access_hashmicrowedor_booking,access.hashmicrowedor.booking,model_hashmicrowedor_booking,,1,1,1,1
+access_hashmicrowedor_booking_catering_line,access.hashmicrowedor.booking.catering.line,model_hashmicrowedor_booking_catering_line,,1,1,1,1
+access_hashmicrowedor_booking_venue_line,access.hashmicrowedor.booking.venue.line,model_hashmicrowedor_booking_venue_line,,1,1,1,1
+access_hashmicrowedor_booking_report_wizard,access.hashmicrowedor_booking_report_wizard,model_hashmicrowedor_booking_report_wizard,,1,1,1,1
