@@ -29,6 +29,7 @@
         'views/views.xml',
         'wizard/hashmicrowedor_booking_report_wizard.xml',
         'report/report.xml',
+<<<<<<< HEAD:hashmicrowedor/__manifest__.py
         'report/hashmicrowedor_booking_report_template.xml',        
         'views/client_view.xml',
         'views/venue_view.xml',
@@ -36,6 +37,22 @@
         'views/booking_view.xml',
         'views/templates.xml',
     ],
+=======
+        'report/hashmicrowedor_booking_report_template.xml',      
+        'views/booking_view.xml',  
+        'views/client_view.xml',
+        'views/venue_view.xml',
+        'views/catering_view.xml',
+        'views/budgetting_view.xml',
+        'views/templates.xml',
+        'views/homepage_view.xml',
+    ],
+    'assets': {
+        'web.assets_frontend': [
+            'hashmicrowedor/static/src/css/custom.css',
+        ],
+    },
+>>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/__manifest__.py
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

@@ -7,7 +7,10 @@
         <field name="arch" type="xml">
             <tree string="Catering">
                 <field name="name"/>
+<<<<<<< HEAD:hashmicrowedor/views/catering_view.xml
                 <field name="price_per_person"/>
+=======
+>>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/views/catering_view.xml
                 <field name="min_order"/>
             </tree>
         </field>
@@ -22,14 +25,59 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+<<<<<<< HEAD:hashmicrowedor/views/catering_view.xml
                         <field name="price_per_person"/>
                         <field name="min_order"/>
                     </group>
+=======
+                        <field name="min_order"/>
+                    </group>
+                    <notebook>
+                        <page string="Dishes">
+                            <field name="dish_ids">
+                                <tree string="Dishes">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="package"/>
+                                    <field name="price_per_person"/>
+                                </tree>
+                                <form string="Dish Form">
+                                    <sheet>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="description"/>
+                                            <field name="package"/>
+                                            <field name="price_per_person"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+>>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/views/catering_view.xml
                 </sheet>
             </form>
         </field>
     </record>
 
+<<<<<<< HEAD:hashmicrowedor/views/catering_view.xml
+=======
+    <!-- hashmicrowedor.catering.dish tree view -->
+    <record id="hashmicrowedor_catering_dish_view_tree" model="ir.ui.view">
+        <field name="name">hashmicrowedor.catering.dish.view.tree</field>
+        <field name="model">hashmicrowedor.catering.dish</field>
+        <field name="arch" type="xml">
+            <tree string="Dishes">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="package"/>
+                <field name="price_per_person"/>
+                <field name="catering_id"/>
+            </tree>
+        </field>
+    </record>
+
+>>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/views/catering_view.xml
     <!-- hashmicrowedor.catering search view -->
     <record id="hashmicrowedor_catering_view_search" model="ir.ui.view">
         <field name="name">hashmicrowedor.catering.view.search</field>
@@ -37,7 +85,10 @@
         <field name="arch" type="xml">
             <search string="Search Catering">
                 <field name="name"/>
+<<<<<<< HEAD:hashmicrowedor/views/catering_view.xml
                 <field name="price_per_person"/>
+=======
+>>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/views/catering_view.xml
                 <field name="min_order"/>
             </search>
         </field>
@@ -53,5 +104,9 @@
     </record>
 
     <!-- Menu item for hashmicrowedor.catering -->
+<<<<<<< HEAD:hashmicrowedor/views/catering_view.xml
     <menuitem id="hashmicrowedor_catering_menu_act" name="Catering" parent="hashmicrowedor_menu_root" action="hashmicrowedor_catering_action" sequence="15"/>
+=======
+    <menuitem id="hashmicrowedor_catering_menu" name="Catering" parent="hashmicrowedor_menu_root" action="hashmicrowedor_catering_action" sequence="15"/>
+>>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/views/catering_view.xml
 </odoo>

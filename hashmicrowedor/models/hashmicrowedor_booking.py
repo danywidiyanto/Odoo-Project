@@ -1,6 +1,5 @@
-from odoo import models, fields, api
+from odoo import _, api, fields, models, tools
 from odoo.exceptions import ValidationError
-
 class WeddingBooking(models.Model):
     _name = 'hashmicrowedor.booking'
     _description = 'Wedding Booking'
