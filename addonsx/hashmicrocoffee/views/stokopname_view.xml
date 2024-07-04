@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hashmicrocoffee_stokopname_view_tree" model="ir.ui.view">
+        <field name="name">History Stok Opname</field>
+        <field name="model">hashmicrocoffee.stokopname</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="tgl_stokopname" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="hashmicrocoffee_stokopname_view_form" model="ir.ui.view">
+        <field name="name">stok Opname</field>
+        <field name="model">hashmicrocoffee.stokopname</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="tgl_stokopname" />
+                        <field name="detailstokopname_ids">
+                            <tree editable="bottom">
+                                <field name="name" />
+                                <field name="stok" />
+                                <field name="check" />
+                                <field name="catatan" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hashmicrocoffee_stokopname_action" model="ir.actions.act_window">
+        <field name="name">Stok Opname</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hashmicrocoffee.stokopname</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hashmicrocoffee_stokopname_name_menu"
+        name="Stok Opname"
+        parent="hashmicrocoffee_menu_root"
+        action="hashmicrocoffee_stokopname_action"
+        sequence="30"/>
+</odoo>
+

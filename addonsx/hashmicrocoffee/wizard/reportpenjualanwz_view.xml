@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hashmicrocoffee.reportpenjualanwz_view_form" model="ir.ui.view">
+        <field name="name">Form Cetak Report Penjualan</field>
+        <field name="model">hashmicrocoffee.reportpenjualanwz</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="dari_tgl"/>
+                        <field name="ke_tgl"/>
+                    </group>
+                    <footer>
+                        <button name="action_penjualan_report" type="object" string="Print Report" class="btn btn-success"/>
+                        <button string="Cancel" class="btn btn-danger" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- hashmicrocoffee.reportpenjualanwz action window -->
+    <record id="hashmicrocoffee.reportpenjualanwz_action" model="ir.actions.act_window">
+        <field name="name">Report Penjualan Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hashmicrocoffee.reportpenjualanwz</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref=""/>
+        <field name="target">new</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hashmicrocoffee_report_penjualan_wizard_pdf_menu_act" name="Laporan Penjualan Wizard Pdf" parent="laporan_menu_categ" action="hashmicrocoffee.reportpenjualanwz_action" sequence="10"/>
+</odoo>

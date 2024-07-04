@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="hashmicrowedor_menu_root" name="Hashmicro Wedding Organizer" sequence="5"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="report_menu_categ" name="Report" parent="hashmicrowedor_menu_root" sequence="50"/>
+</odoo>

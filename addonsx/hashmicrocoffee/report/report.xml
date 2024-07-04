@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_penjualan_wizard_xlsx" model="ir.actions.report">
+        <field name="name">Laporan Penjualan Excel</field>
+        <field name="model">hashmicrocoffee.penjualan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hashmicrocoffee.report_penjualan_template_wizard_xlsx</field>
+        <field name="report_file">hashmicrocoffee.report_penjualan_template_wizard_xlsx</field>
+        <field name="binding_model_id" ref="model_hashmicrocoffee_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_penjualan_wizard" model="ir.actions.report">
+        <field name="name">Laporan Penjualan</field>
+        <field name="model">hashmicrocoffee.penjualan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hashmicrocoffee.report_penjualan_template_wizard</field>
+        <field name="report_file">hashmicrocoffee.report_penjualan_template_wizard</field>
+        <field name="binding_model_id" ref="model_hashmicrocoffee_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_bahan_xlsx" model="ir.actions.report">
+        <field name="name">Print Laporan Bahan XLSX</field>
+        <field name="model">hashmicrocoffee.bahan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hashmicrocoffee.report_bahan_xlsx</field>
+        <field name="report_file">hashmicrocoffee.report_bahan_xlsx</field>
+        <field name="binding_model_id" ref="model_hashmicrocoffee_bahan"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_penjualan_pdf" model="ir.actions.report">
+        <field name="name">Print Laporan Penjualan</field>
+        <field name="model">hashmicrocoffee.penjualan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hashmicrocoffee.report_penjualan_template_pdf</field>
+        <field name="report_file">hashmicrocoffee.report_penjualan_template_pdf</field>
+        <field name="binding_model_id" ref="model_hashmicrocoffee_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_pembelian_pdf" model="ir.actions.report">
+        <field name="name">Print Laporan Pembelian</field>
+        <field name="model">hashmicrocoffee.pembelian</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hashmicrocoffee.report_pembelian_template_pdf</field>
+        <field name="report_file">hashmicrocoffee.report_pembelian_template_pdf</field>
+        <field name="binding_model_id" ref="model_hashmicrocoffee_pembelian"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

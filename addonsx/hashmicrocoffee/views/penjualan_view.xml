@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- hashmicrocoffee.penjualan tree view -->
+    <record id="hashmicrocoffee_penjualan_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Penjualan</field>
+        <field name="model">hashmicrocoffee.penjualan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <button name="%(hashmicrocoffee.report_penjualan_pdf)d" type="action" icon="fa-print" string="Print" class="btn btn-warning"/>
+                <!-- Add your fields here -->
+                <field name="referensi"/>
+                <field name="user_id" />
+                <field name="membership"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="tgl_transaksi"/>
+                <field name="total_harga"/>
+                <field name="state" widget="badge" 
+                 decoration-info="state == 'cancel'"
+                 decoration-danger="state == 'done'"
+                 decoration-success="state == 'draf'"
+                 decoration-primary="state == 'confirm'"/>
+            </tree>
+        </field>
+    </record>
+    <!-- hashmicrocoffee.penjualan form view -->
+    <record id="hashmicrocoffee_penjualan_view_form" model="ir.ui.view">
+        <field name="name">Form Penjualan</field>
+        <field name="model">hashmicrocoffee.penjualan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button name="%(hashmicrocoffee.report_penjualan_pdf)d" type="action" icon="fa-print" string="Print" class="btn btn-warning"/>
+                    <button name="action_confirm" type="object" string="CONFIRM" states="draft" class="btn btn_primary oe_highlight"/>
+                    <button name="action_done" type="object" string="DONE" states="confirm" class="btn btn_success oe_highlight"/>
+                    <button name="action_cancel" type="object" string="CANCEL" states="confirm" class="btn btn_danger oe_highlight"/>
+                    <button name="action_draft" type="object" string="kembali ke DRAFT" states="cancel" confirm="Apakah akan diedit kembali?" class="btn btn_info oe_highlight"/>
+                    <field name="state" widge="statusbar" statusbar_visible="draft,confirm,done" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="referensi" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="membership" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        <field name="name" attrs="{'invisible':[('membership','!=',False)], 'readonly':[('state','!=','draft')]}"/>
+                        <field name="partner_id" attrs="{'invisible':[('membership','!=',True)], 'readonly':[('state','!=','draft')]}" domain="[('is_member','=',True)]"/>
+                        <field name="tgl_transaksi" attrs="{'readonly':[('membership','!=',False)], 'readonly':[('state','!=','draft')]}"/>
+                        <field name="total_harga" readonly="1"/>
+                    </group>
+                    <group name="group_name" string='Detail Penjualan'>
+                            <field name="detailpenjualan_ids" attrs="{'readonly':[('state','!=','draft')]}">
+                                <tree editable="bottom">
+                                    <field name="bahan_id"/>
+                                    <field name="harga_satuan"/>
+                                    <field name="quantity"/>
+                                    <field name="subtotal" sum = "Total Jual"/>
+                                </tree>
+                            </field>
+                        </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- hashmicrocoffee.penjualan action window -->
+    <record id="hashmicrocoffee_penjualan_action" model="ir.actions.act_window">
+        <field name="name">Penjualan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hashmicrocoffee.penjualan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hashmicrocoffee_penjualan_menu_act" name="Penjualan" parent="transaksi_menu_categ" action="hashmicrocoffee_penjualan_action" sequence="15" />
+
+</odoo>

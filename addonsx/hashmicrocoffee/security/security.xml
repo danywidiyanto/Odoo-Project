@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+    <data noupdate="1">
+        <record id="module_category_hashmicrocoffee" model="ir.module.category">
+            <field name="name">Hashmicro Coffee</field>
+            <field name="description">Hashmicro Coffee</field>
+        </record>
+        <record id="hashmicrocoffee_group_cashier" model="res.groups">
+            <field name="name">Cashier</field>
+        </record>
+        <record id="hashmicrocoffee_group_inventory_manager" model="res.groups">
+            <field name="name">Inventory Manager</field>
+            <field name="category_id" ref="module_category_hashmicrocoffee"/>
+        </record>
+        <record id="hashmicrocoffee_group_accountant" model="res.groups">
+            <field name="name">Accountant</field>
+            <field name="category_id" ref="module_category_hashmicrocoffee"/>
+        </record>
+        <record id="hashmicrocoffee_group_general_manager" model="res.groups">
+            <field name="name">General Manager</field>
+            <field name="category_id" ref="module_category_hashmicrocoffee"/>
+            <field name="implied_ids" eval="[(4, ref('hashmicrocoffee_group_cashier'))]"/>
+        </record>
+        <!-- Define record rules -->
+        <record id="hashmicrocoffee_cashier_rule" model="ir.rule">
+            <field name="name">Hak Akses Record Penjualan Berdasarkan User ID</field>
+            <field name="model_id" ref="model_hashmicrocoffee_penjualan"/>
+            <field name="groups" eval="[(4, ref('hashmicrocoffee_group_cashier'))]"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="True" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+        </record>
+        <record id="hashmicrocoffee_general_manager_rule" model="ir.rule">
+            <field name="name">Hashmicrocoffee Rule General Manager</field>
+            <field name="model_id" ref="model_hashmicrocoffee_penjualan"/>
+            <field name="groups" eval="[(4, ref('hashmicrocoffee_group_general_manager'))]"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="True" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+        <record id="hashmicrocoffee_general_manager_rule" model="ir.rule">
+            <field name="name">Hashmicrocoffee Rule General Manager</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="groups" eval="[(6,0,[ref('hashmicrocoffee_group_general_manager')])]"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="True" />
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+        </record>
+    </data>
+</odoo>

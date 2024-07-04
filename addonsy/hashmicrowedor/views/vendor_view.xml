@@ -1,0 +1,25 @@
+<!-- views/vendor_views.xml -->
+
+<odoo>
+    <data>
+
+        <!-- Menuitem for Vendor -->
+        <!-- <menuitem id="menu_vendor" name="Vendor" sequence="10"/>
+        <menuitem id="menu_vendor_list" name="Vendor List" parent="menu_vendor" action="action_vendor_list"/> -->
+
+        <!-- Action for Vendor List -->
+        <!-- <record id="action_vendor_list" model="ir.actions.act_window">
+            <field name="name">Vendor List</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('vendor_category', '!=', False)]</field>
+            <field name="context">{'search_default_vendor': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new vendor.
+                </p>
+            </field>
+        </record> -->
+
+    </data>
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- hashmicrowedor.catering tree view -->
+    <record id="hashmicrowedor_catering_view_tree" model="ir.ui.view">
+        <field name="name">hashmicrowedor.catering.view.tree</field>
+        <field name="model">hashmicrowedor.catering</field>
+        <field name="arch" type="xml">
+            <tree string="Catering">
+                <field name="name"/>
+                <field name="min_order"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hashmicrowedor.catering form view -->
+    <record id="hashmicrowedor_catering_view_form" model="ir.ui.view">
+        <field name="name">hashmicrowedor.catering.view.form</field>
+        <field name="model">hashmicrowedor.catering</field>
+        <field name="arch" type="xml">
+            <form string="Catering Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="min_order"/>
+                    </group>
+                    <notebook>
+                        <page string="Dishes">
+                            <field name="dish_ids">
+                                <tree string="Dishes">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="package"/>
+                                    <field name="price_per_person"/>
+                                </tree>
+                                <form string="Dish Form">
+                                    <sheet>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="description"/>
+                                            <field name="package"/>
+                                            <field name="price_per_person"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- hashmicrowedor.catering.dish tree view -->
+    <record id="hashmicrowedor_catering_dish_view_tree" model="ir.ui.view">
+        <field name="name">hashmicrowedor.catering.dish.view.tree</field>
+        <field name="model">hashmicrowedor.catering.dish</field>
+        <field name="arch" type="xml">
+            <tree string="Dishes">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="package"/>
+                <field name="price_per_person"/>
+                <field name="catering_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hashmicrowedor.catering search view -->
+    <record id="hashmicrowedor_catering_view_search" model="ir.ui.view">
+        <field name="name">hashmicrowedor.catering.view.search</field>
+        <field name="model">hashmicrowedor.catering</field>
+        <field name="arch" type="xml">
+            <search string="Search Catering">
+                <field name="name"/>
+                <field name="min_order"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- hashmicrowedor.catering action window -->
+    <record id="hashmicrowedor_catering_action" model="ir.actions.act_window">
+        <field name="name">Catering</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hashmicrowedor.catering</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- Menu item for hashmicrowedor.catering -->
+    <menuitem id="hashmicrowedor_catering_menu" name="Catering" parent="hashmicrowedor_menu_root" action="hashmicrowedor_catering_action" sequence="15"/>
+</odoo>

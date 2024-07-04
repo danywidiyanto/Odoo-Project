@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- hashmicrowedor.booking form view -->
+    <record id="hashmicrowedor_booking_view_form" model="ir.ui.view">
+        <field name="name">hashmicrowedor.booking.view.form</field>
+        <field name="model">hashmicrowedor.booking</field>
+        <field name="arch" type="xml">
+            <form string="Wedding Booking Form">
+                <sheet>
+                    <group>
+                        <field name="client_id"/>
+                        <field name="booking_date"/>
+                        <field name="total_price" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Catering Lines">
+                            <field name="catering_line_ids">
+                                <tree string="Catering Lines">
+                                    <field name="catering_id"/>
+                                    <field name="package_id"/>
+                                    <field name="quantity"/>
+                                    <field name="price"/>
+                                </tree>
+                                <form string="Catering Line Form">
+                                    <sheet>
+                                        <group>
+                                            <field name="catering_id"/>
+                                            <field name="package_id"/>
+                                            <field name="quantity"/>
+                                            <field name="price"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Venue Lines">
+                            <field name="venue_line_ids">
+                                <tree string="Venue Lines">
+                                    <field name="venue_id"/>
+                                    <field name="price"/>
+                                </tree>
+                                <form string="Venue Line Form">
+                                    <sheet>
+                                        <group>
+                                            <field name="venue_id"/>
+                                            <field name="price"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- hashmicrowedor.booking tree view -->
+    <record id="hashmicrowedor_booking_view_tree" model="ir.ui.view">
+        <field name="name">hashmicrowedor.booking.view.tree</field>
+        <field name="model">hashmicrowedor.booking</field>
+        <field name="arch" type="xml">
+            <tree string="Wedding Bookings">
+                <field name="client_id"/>
+                <field name="booking_date"/>
+                <field name="total_price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hashmicrowedor.booking action -->
+    <record id="hashmicrowedor_booking_action" model="ir.actions.act_window">
+        <field name="name">Wedding Bookings</field>
+        <field name="res_model">hashmicrowedor.booking</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu item for hashmicrowedor.booking -->
+    <menuitem id="hashmicrowedor_booking_menu" name="Bookings" parent="hashmicrowedor_menu_root" action="hashmicrowedor_booking_action" sequence="10"/>
+</odoo>

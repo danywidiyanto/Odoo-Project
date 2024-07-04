@@ -1,0 +1,62 @@
+<odoo>
+
+    <!--hashmicrocoffee.pegawai tree view  -->
+<record id="hashmicrocoffee_cashier_view_tree" model="ir.ui.view">
+    <field name="name">Daftar Cashier</field>
+    <field name="model">hashmicrocoffee.pegawai</field>
+    <field name="arch" type="xml">
+        <tree>
+            <!-- add your fields here -->
+            <field name="name"/>
+            <field name="age"/>
+            <field name="tgl_lahir"/>
+            <field name="status" />
+            <field name="jabatan"/>
+            <field name="photo" widget="image"/>
+        </tree>
+    </field>
+</record>
+
+<!-- hashmicrocoffee.pegawai form view -->
+<record id="hashmicrocoffee_cashier_view_form" model="ir.ui.view">
+    <field name="name">Form Cashier</field>
+    <field name="model">hashmicrocoffee.pegawai</field>
+    <field name="arch" type="xml">
+        <form string="Identitas Diri">
+            <sheet>
+                <group string="Identitas">
+                <!-- add your field here -->
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="tgl_lahir"/>
+                    <field name="status" />
+                </group>
+                <group name="jabatan" string="Posisi">
+                    <field name="jabatan"/>
+                    <field name="photo" widget="image" class="oe_avatar"/>
+                </group>
+
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+<!-- Action Menu Selection -->
+<record id="hashmicrocoffee_cashier_action" model="ir.actions.act_window">
+    <field name="name">Cashier</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hashmicrocoffee.pegawai</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('jabatan','=','cashier')]</field>
+</record>
+    
+<!-- Action Menu -->
+<menuitem 
+    id="hashmicrocoffee_cashier_menu_act" 
+    name="Cashier" 
+    parent="pegawai_menu_categ" 
+    action="hashmicrocoffee_cashier_action" 
+    sequence="15"/>
+
+</odoo>

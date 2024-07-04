@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+    <data noupdate="1">
+        <record id="module_category_hashmicrowedor" model="ir.module.category">
+            <field name="name">Hashmicro Wedding Organizer</field>
+            <field name="description">Hashmicro Wedding Organizer</field>
+        </record>
+        <record id="hashmicrowedor_group_booking_management" model="res.groups">
+            <field name="name">Booking Management</field>
+        </record>
+        <record id="hashmicrowedor_group_vendor_management" model="res.groups">
+            <field name="name">Vendor Management</field>
+            <field name="category_id" ref="module_category_hashmicrowedor"/>
+        </record>
+                <record id="hashmicrowedor_group_customer_management" model="res.groups">
+            <field name="name">Customer Management</field>
+            <field name="category_id" ref="module_category_hashmicrowedor"/>
+        </record>
+        </record>
+        <record id="hashmicrowedor_group_inventory_management" model="res.groups">
+            <field name="name">Inventory Management</field>
+            <field name="category_id" ref="module_category_hashmicrowedor"/>
+        </record>
+        <record id="hashmicrowedor_group_sales_management" model="res.groups">
+            <field name="name">Sales Finance Management</field>
+            <field name="category_id" ref="module_category_hashmicrowedor"/>
+        </record>
+        <!-- Define record rules -->
+        <!-- <record id="hashmicrowedor_booking_rule" model="ir.rule">
+            <field name="name">Hak Akses Record Penjualan Berdasarkan User ID</field>
+            <field name="model_id" ref="model_hashmicrowedor_penjualan"/>
+            <field name="groups" eval="[(4, ref('hashmicrowedor_group_cashier'))]"/>
+            <field name="global" eval="True" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="True" />
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+        </record> -->
+    </data>
+</odoo>
