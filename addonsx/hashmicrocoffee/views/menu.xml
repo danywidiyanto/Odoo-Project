@@ -2,9 +2,10 @@
 <odoo>
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="hashmicrocoffee_menu_root" name="Hashmicro Coffee" sequence="10"/>
-    <menuitem id="hashmicrowedore_menu_root" name="Hashmicro WO" sequence="5"/>
     <!-- This Menu Item Must have a parent -->
     <menuitem id="stakeholder_menu_categ" name="Stakeholder" parent="hashmicrocoffee_menu_root" sequence="10"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="makanan_menu_categ" name="Makanan" parent="hashmicrocoffee_menu_root" sequence="12"/>
     <!-- This Menu Item Must have a parent -->
     <menuitem id="stok_menu_categ" name="Stok Barang" parent="hashmicrocoffee_menu_root" sequence="15"/>
     <!-- This Menu Item Must have a parent -->

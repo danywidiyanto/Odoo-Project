@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="validity_datetime" widget="date"/>
+                <field name="due_date"/>
+            </xpath>
+            <!-- Ensure payment_term_id is present in the parent view -->
+            <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='validity_date']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="discount"/>
+                <field name="final_price" widget="monetary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="validity_date" invisible="1"/>
+                <field name="validity_datetime" widget="date"/>
+                <field name="due_date"/>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="discount"/>
+                <field name="final_price" widget="monetary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

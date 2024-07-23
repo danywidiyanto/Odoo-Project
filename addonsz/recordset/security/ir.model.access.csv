@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_recordset_class,access.recordset.class,model_recordset_class,,1,1,1,1
+access_recordset_student,access.recordset.student,model_recordset_student,,1,1,1,1
+access_recordset_canteen,access.recordset.canteen,model_recordset_canteen,,1,1,1,1

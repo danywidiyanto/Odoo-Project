@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <menuitem id="booking_order_menu_root" name="Booking" sequence="5"/>
+
+        <menuitem id="booking_order_menu_categ" name="Orders" parent="booking_order_menu_root" sequence="1"/>
+
+        <menuitem id="booking_config_menu_categ" 
+                name="Configuration" 
+                parent="booking_order_menu_root" 
+                sequence="2"
+                groups="sales_team.group_sale_salesman,salemod.sales_group_admin,salemod.sales_group_manager"/>
+                
+        <menuitem id="booking_report_menu_categ" 
+                name="Reporting" 
+                parent="booking_order_menu_root" 
+                sequence="3" 
+                groups="sales_team.group_sale_salesman,salemod.sales_group_admin,salemod.sales_group_manager"/>
+
+
+        <menuitem id="menu_sale_order_inherit"
+                name="Booking Order"
+                parent="booking_order_menu_categ"
+                sequence="6"
+                action="action_booking_order"/>
+
+        <menuitem id="menu_sale_order_inherit_history"
+                name="Booking History"
+                parent="booking_order_menu_categ"
+                sequence="7"
+                action="action_booking_order_history"/>
+    
+        <menuitem id="sale.menu_sale_config"
+            name="Configuration"
+            parent="sale.sale_menu_root"
+            sequence="6"
+            groups="sales_team.group_sale_salesman,salemod.sales_group_admin,salemod.sales_group_manager"/>
+
+        <menuitem id="sale.product_menu_catalog" 
+            name="Products" 
+            parent="sale.sale_menu_root" 
+            sequence="4" 
+            groups="sales_team.group_sale_salesman,salemod.sales_group_admin,salemod.sales_group_manager"/>
+
+        <menuitem id="sale.menu_sale_invoicing"
+            name="To Invoice"
+            parent="sale.sale_menu_root"
+            sequence="3" 
+            groups="sales_team.group_sale_salesman,salemod.sales_group_admin,salemod.sales_group_manager"/>
+
+
+
+</odoo>

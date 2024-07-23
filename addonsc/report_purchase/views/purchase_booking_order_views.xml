@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+        <record id="view_purchase_order_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group" position="inside">
+                    <group>
+                        <field name="is_booking"/>
+                    </group>
+                </xpath>
+                <!-- <xpath expr="//button[@name='action_cancel']" position="after">
+                    <button name="action_create_rfq" string="Request For Quotation" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('is_booking', '=', False)]}"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">
+                    <field name="qty_booking"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field[@name='purchase_order_option_ids']/tree/field[@name='quantity']" position="after">
+                    <field name="qty_booking"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field[@name='purchase_order_option_ids']/tree/field[@name='qty_booking']" position="after">
+                    <field name="qty_available"/>
+                </xpath> -->
+            </field>
+        </record>
+
+        <record id="view_purchase_order_tree_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.tree.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="is_booking"/>
+                </xpath>
+            </field>
+        </record>
+        
+
+        <record id="action_purchase_booking_order" model="ir.actions.act_window">
+          <field name="name">Purchase Booking Order</field>
+          <field name="res_model">purchase.order</field>
+          <field name="view_mode">tree,form</field>
+          <field name="domain">[('is_booking', '=', True)]</field>
+        </record>
+
+        <menuitem id="menu_purchase_booking_order"
+                  name="Purchase Booking Order"
+                  parent="purchase.menu_procurement_management"
+                  action="action_purchase_booking_order"
+                  sequence="6"/>
+                  
+  </data>
+</odoo>

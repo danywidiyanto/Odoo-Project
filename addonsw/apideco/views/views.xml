@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="apideco.list">
+      <field name="name">apideco list</field>
+      <field name="model">apideco.apideco</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="apideco.action_window">
+      <field name="name">apideco window</field>
+      <field name="res_model">apideco.apideco</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="apideco.action_server">
+      <field name="name">apideco server</field>
+      <field name="model_id" ref="model_apideco_apideco"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="apideco" id="apideco.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="apideco.menu_1" parent="apideco.menu_root"/>
+    <menuitem name="Menu 2" id="apideco.menu_2" parent="apideco.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="apideco.menu_1_list" parent="apideco.menu_1"
+              action="apideco.action_window"/>
+    <menuitem name="Server to list" id="apideco" parent="apideco.menu_2"
+              action="apideco.action_server"/>
+-->
+  </data>
+</odoo>

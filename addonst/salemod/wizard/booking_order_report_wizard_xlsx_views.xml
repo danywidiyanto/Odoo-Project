@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_booking_order_report_wizard_form_xlsx" model="ir.ui.view">
+        <field name="name">Booking Order Form Xlsx</field>
+        <field name="model">booking.order.report.wizard.xlsx</field>
+        <field name="arch" type="xml">
+            <form string="Print Booking Order Report Xlsx">
+                <sheet>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <footer>
+                        <button string="Print" type="object" name="action_booking_order_report_xlsx" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_booking_order_report_xlsx_wizard" model="ir.actions.act_window">
+        <field name="name">Print Booking Order Report Xlsx</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">booking.order.report.wizard.xlsx</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref=""/>
+        <field name="target">new</field>
+    </record>
+
+
+    <menuitem id="booking_order_wizard_xlsx_menu_act" 
+            name="Booking Order Report Wizard Xlsx" 
+            parent="booking_report_menu_categ" 
+            action="action_booking_order_report_xlsx_wizard" 
+            sequence="3"/>
+
+
+</odoo>

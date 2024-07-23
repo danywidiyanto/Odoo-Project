@@ -1,8 +1,4 @@
-<<<<<<< HEAD:hashmicrowedor/models/hashmicrowedor_catering.py
-from odoo import _, api, fields, models, tools
-=======
 from odoo import models, fields, api
->>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/models/hashmicrowedor_catering.py
 from odoo.exceptions import ValidationError
 
 class Catering(models.Model):
@@ -10,23 +6,14 @@ class Catering(models.Model):
     _description = 'Catering'
 
     name = fields.Char(string='Catering Name')
-<<<<<<< HEAD:hashmicrowedor/models/hashmicrowedor_catering.py
-    price_per_person = fields.Integer(string='Price per Person')
-    min_order = fields.Integer(string='Minimum Order', default = 50)
-=======
     min_order = fields.Integer(string='Minimum Order', default=50)
     dish_ids = fields.One2many(comodel_name='hashmicrowedor.catering.dish', inverse_name='catering_id', string='Dishes')
->>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/models/hashmicrowedor_catering.py
 
     @api.constrains('min_order')
     def _check_min_order(self):
         for record in self:
             if record.min_order < 50:
                 raise ValidationError("Minimum order for catering is 50 portions.")
-<<<<<<< HEAD:hashmicrowedor/models/hashmicrowedor_catering.py
-    
-    
-=======
 
 class CateringDish(models.Model):
     _name = 'hashmicrowedor.catering.dish'
@@ -73,4 +60,3 @@ class Food(models.Model):
     name = fields.Char(string='Food Name', required=True)
     description = fields.Text(string='Description')
     price = fields.Float(string='Price')
->>>>>>> bc71baf5 (Update Web Interface):addonsx/hashmicrowedor/models/hashmicrowedor_catering.py

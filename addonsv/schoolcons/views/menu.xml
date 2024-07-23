@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="schoolcons_menu_root" name="Schoolcons" sequence="80"/>
+
+</odoo>

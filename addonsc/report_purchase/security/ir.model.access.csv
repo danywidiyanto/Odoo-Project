@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_booking_order,purchase.booking.order,model_purchase_booking_order,,1,1,1,1
+
+access_purchase_order_wizard_pdf,purchase.order.report.wizard,report_purchase.model_purchase_order_report_wizard,,1,1,1,1
+access_purchase_order_wizard_xlsx,purchase.order.report.wizard.xlsx,report_purchase.model_purchase_order_report_wizard,,1,1,1,1
+access__template_purchase_order_wizard_xlsx,report.purchase_order_report_xlsx,report_purchase.model_report_purchase_order_report_xlsx,,1,1,1,1

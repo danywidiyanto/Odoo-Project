@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- apideco.itemcategory form view -->
+    <record id="apideco.itemcategory_view_form" model="ir.ui.view">
+        <field name="name">Item category</field>
+        <field name="model">apideco.itemcategory</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="code_category"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- apideco.itemcategory tree view -->
+    <record id="apideco.itemcategory_view_tree" model="ir.ui.view">
+        <field name="name">Item Category List</field>
+        <field name="model">apideco.itemcategory</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="code"/>
+                <field name="name"/>
+                <field name="code_category"/>
+            </tree>
+        </field>
+    </record>
+    <!-- apideco.itemcategory action window -->
+    <record id="apideco.itemcategory_action" model="ir.actions.act_window">
+        <field name="name">Item Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">apideco.itemcategory</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="apideco_item_category_menu_act" name="Item Category" parent="apideco_menu_root" action="apideco.itemcategory_action" sequence="20"/>
+
+</odoo>

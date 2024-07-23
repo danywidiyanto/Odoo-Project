@@ -1,0 +1,3 @@
+
+./odoo-bin --addons-path=/home/dany-widiyanto/Downloads/Hashmicro_Odoo_Training/odoo-14.0-hmcoffee/addons,/home/dany-widiyanto/Downloads/Hashmicro_Odoo_Training/odoo-14.0-hmcoffee/addonsz -d hashmicrocoffee --db_port 5432 --xmlrpc-port=8069  --limit-memory-hard 0 --limit-time-real=10000 -u recordset
+

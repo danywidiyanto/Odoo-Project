@@ -13,3 +13,4 @@ from . import penjualan
 from . import karyawan
 from . import stokopname
 from . import alat
+from . import makanan

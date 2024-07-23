@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- apideco.discount form view -->
+    <record id="apideco.discount_view_form" model="ir.ui.view">
+        <field name="name">Discount Form</field>
+        <field name="model">apideco.discount</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- apideco.discount tree view -->
+    <record id="apideco.discount_view_tree" model="ir.ui.view">
+        <field name="name">Discount List</field>
+        <field name="model">apideco.discount</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <!-- apideco.discount action window -->
+    <record id="apideco.discount_action" model="ir.actions.act_window">
+        <field name="name">Discount</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">apideco.discount</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="apideco_discount_menu_act" name="Discount" parent="apideco_menu_root" action="apideco.discount_action" sequence="10"/>
+
+</odoo>

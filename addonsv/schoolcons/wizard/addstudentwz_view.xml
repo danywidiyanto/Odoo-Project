@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="schoolcons_addstudentwz_view_form" model="ir.ui.view">
+        <field name="name">Form Student</field>
+        <field name="model">schoolcons.addstudent</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="address"/>
+                        <field name="class_id"/>
+                    </group>
+                    <footer>
+                        <button name="action_add_student" type="object" string="Add Student" class="btn btn-success"/>
+                        <button name="action_class_info" type="object" string="Class Info" class="btn btn-info"/>
+                        <button string="Cancel" class="btn btn-danger" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- schoolcons.addstudentwz action window -->
+    <record id="schoolcons.addstudentwz_action" model="ir.actions.act_window"> 
+        <field name="name">Add Student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">schoolcons.addstudent</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref=""/>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="schoolcons_menu_root" name="Schoolcons" sequence="80"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="schoolcons_add_student_wizard_menu_act" name="Add Student Wizard" parent="schoolcons_menu_root" action="schoolcons.addstudentwz_action" sequence="30"/>
+</odoo>

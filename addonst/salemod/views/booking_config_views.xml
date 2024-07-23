@@ -1,0 +1,39 @@
+<odoo>
+    <!-- booking.config tree view -->
+    <record id="booking_configuration_view_tree" model="ir.ui.view">
+        <field name="name">booking.config.view.tree</field>
+        <field name="model">booking.config</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="max_booking_per_order"/>
+                <field name="qty_limit_by_percentage"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- booking.config form view -->
+    <record id="booking_configuration_view_form" model="ir.ui.view">
+        <field name="name">booking.config.view.form</field>
+        <field name="model">booking.config</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="max_booking_per_order"/>
+                        <field name="qty_limit_by_percentage"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_booking_configuration" model="ir.actions.act_window">
+        <field name="name">Booking Configuration</field>
+        <field name="res_model">booking.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="booking_order_submenu_config" name="Booking Configuration" parent="booking_config_menu_categ" action="action_booking_configuration" sequence="1" />
+</odoo>

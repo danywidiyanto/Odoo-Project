@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_report" model="ir.actions.report">
+        <field name="name">Purchase Order Report Pdf</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">salemod.purchase_order_report_template_pdf</field>
+        <field name="report_file">salemod.purchase_order_report_template_pdf</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="purchase_order_report_xlsx" model="ir.actions.report">
+        <field name="name">Purchase Order Report Xlsx</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">purchase_order_report_xlsx</field>
+        <field name="report_file">purchase_order_report_xlsx</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="booking_order_report" model="ir.actions.report">
+        <field name="name">Booking Order Report Pdf</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">salemod.booking_order_report_template_pdf</field>
+        <field name="report_file">salemod.booking_order_report_template_pdf</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="booking_order_report_xlsx" model="ir.actions.report">
+        <field name="name">Booking Order Report Xlsx</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">booking_order_report_xlsx</field>
+        <field name="report_file">booking_order_report_xlsx</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
+

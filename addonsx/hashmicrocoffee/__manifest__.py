@@ -48,6 +48,7 @@
         'views/karyawan_view.xml',
         'views/stokopname_view.xml',
         'views/alat_view.xml',
+        'views/makanan_view.xml',
         
     ],
     # only loaded in demonstration mode

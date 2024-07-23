@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="recordset_menu_root" name="Record Set" sequence="70"/>
+
+</odoo>

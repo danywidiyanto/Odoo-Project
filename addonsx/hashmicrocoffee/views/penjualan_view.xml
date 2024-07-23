@@ -52,7 +52,7 @@
                     <group name="group_name" string='Detail Penjualan'>
                             <field name="detailpenjualan_ids" attrs="{'readonly':[('state','!=','draft')]}">
                                 <tree editable="bottom">
-                                    <field name="bahan_id"/>
+                                    <field name="makanan_id"/>
                                     <field name="harga_satuan"/>
                                     <field name="quantity"/>
                                     <field name="subtotal" sum = "Total Jual"/>

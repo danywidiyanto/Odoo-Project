@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="schoolcons_class_view_tree" model="ir.ui.view">
+    <field name="name">Class</field>
+    <field name="model">schoolcons.class</field>
+    <field name="arch" type="xml">
+      <tree string="">
+        <field name="name" />
+        <field name="no_room"/>
+        <field name="capacity" />
+        <field name="total_student"/>
+        <field name="seat_percentage" widget="progressbar"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="schoolcons_class_view_form" model="ir.ui.view">
+    <field name="name">Class</field>
+    <field name="model">schoolcons.class</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="no_room"/>
+            <field name="capacity" />
+            <field name="total_student"/>
+            <field name="seat_percentage" widget="progressbar"/>
+          </group>
+          <group>
+            <field name="student_ids">
+              <tree editable="bottom">
+                <field name="name"/>
+                <field name="address"/>
+              </tree>
+            </field>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="schoolcons_class_action" model="ir.actions.act_window">
+    <field name="name">Class</field>
+    <field name="res_model">schoolcons.class</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem
+    id="schoolcons_class_menu_act"
+    name="Class"
+    action="schoolcons_class_action"
+    parent="schoolcons_menu_root"
+    sequence="20"/>
+
+</odoo>

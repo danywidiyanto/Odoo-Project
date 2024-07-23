@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hashmicrocoffee_makanan_view_tree" model="ir.ui.view">
+        <field name="name">Makanan</field>
+        <field name="model">hashmicrocoffee.makanan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="harga" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="hashmicrocoffee_makanan_view_form" model="ir.ui.view">
+        <field name="name">Makanan</field>
+        <field name="model">hashmicrocoffee.makanan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="harga" />
+                        <field name="detailmakanan_ids">
+                            <tree editable="bottom">
+                                <field name="bahan_id" />
+                                <field name="kebutuhan" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hashmicrocoffee_makanan_action" model="ir.actions.act_window">
+        <field name="name">Makanan</field>
+        <field name="res_model">hashmicrocoffee.makanan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hashmicrocoffee_makanan_menu_act"
+        name="Makanan"
+        action="hashmicrocoffee_makanan_action"
+        parent="makanan_menu_categ"
+        sequence="10"/>
+
+</odoo>

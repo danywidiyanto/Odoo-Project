@@ -3,9 +3,10 @@ from odoo import models,fields,api
 class Bahan(models.Model):
     _name = 'hashmicrocoffee.bahan'
     _description = 'Bahan'
+    _rec_name = 'name'
     
     name = fields.Char(string='Nama Bahan')
-    kategori_bahan_id = fields.Many2one(comodel_name='hashmicrocoffee.kategoribahan', string='Kategori')
+    kategori_bahan_id = fields.Many2one(comodel_name='hashmicrocoffee.kategoribahan', string='Kategori Bahan')
     stok = fields.Integer(string='Jumlah Stok')
     kondisi_stok = fields.Char(compute='_compute_kondisi_stok', string='Kondisi Stok')
     harga_modal = fields.Integer(string='Harga Modal')
